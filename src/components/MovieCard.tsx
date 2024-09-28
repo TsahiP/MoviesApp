@@ -17,7 +17,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
         <div
         onClick={() => {dispatch(openMovieModal(movie))}}
           key={movie.id}
-          className="mr-auto ml-auto w-[80%] md:w-[85%] lg:w-[70%] bg-gray-800 rounded-lg "
+          className="mr-auto ml-auto w-[80%] md:w-[85%] lg:w-[80%] bg-gray-800 rounded-lg  mb-10"
         >
           {/* <div className="w-full h-[150px]"></div> */}
           <div className="flex flex-col gap-3 ">

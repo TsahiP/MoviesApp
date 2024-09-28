@@ -69,7 +69,7 @@ function App() {
         </div>
         {/* content */}
         <DataDialog />
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[20px] mr-10 ml-10 mt-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[20px]  mr-[5%] ml-[5%] md:mr-[10%] md:ml-[10%] mt-10">
           {/* <MoovieCard movies={movies} /> */}
 
           {searchInputValue === ""
