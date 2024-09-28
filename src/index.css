@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+
+  background-image: url('/bgmain2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
