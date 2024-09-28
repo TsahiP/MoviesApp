@@ -1,7 +1,7 @@
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { createAppSlice } from "../app/createAppSlice";
 // import type { AppThunk } from "../app/store";
-import { MovieResult,IMovie } from "../types/movie";
+import { MovieResult } from "../types/movie";
 
 // type
 export interface IModal {

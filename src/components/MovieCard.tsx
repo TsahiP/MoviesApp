@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { MovieResult } from "../types/movie";
 import { GoStar } from "react-icons/go";
 import { useAppDispatch } from "../app/hooks";
@@ -9,7 +9,7 @@ interface MovieCardProps {
 }
 
 const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
-  const [dialogFlag, setDialogFlag] = useState(false);
+  // const [dialogFlag, setDialogFlag] = useState(false);
   const dispatch = useAppDispatch();
 
   return (

@@ -7,7 +7,6 @@ import { IMovie, IMovies } from "../types/movie";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 const API_URL = import.meta.env.VITE_DISCOVER_URL;
-const SEARCH_URL = import.meta.env.VITE_SEARCH_URL;
 // Define a service using a base URL and expected endpoints
 export const moviesApiSlice = createApi({
   baseQuery: fetchBaseQuery({
@@ -31,19 +30,19 @@ export const moviesApiSlice = createApi({
       query: (page = 0) => `discover/movie?api_key=${API_KEY}&page=${page}`,
       // `providesTags` determines which 'tag' is attached to the
       // cached data returned by the query.
-      providesTags: (result, error, id) => [{ type: "Movies", id }],
+      providesTags: (_result, _error, id) => [{ type: "Movies", id }],
     }),
     getMovieData: build.query<IMovie, number>({
       query: (id) => `movie/${id}?api_key=${API_KEY}`,
       // `providesTags` determines which 'tag' is attached to the
       // cached data returned by the query.
-      providesTags: (result, error, id) => [{ type: "Movies", id }],
+      providesTags: (_result, _error, id) => [{ type: "Movies", id }],
     }),
     searchMovies: build.query<IMovies, string>({
       query: (query) => `search/movie?api_key=${API_KEY}&query=${query}`,
       // `providesTags` determines which 'tag' is attached to the
       // cached data returned by the query.
-      providesTags: (result, error, id) => [{ type: "Movies", id }],
+      providesTags: (_result, _error, id) => [{ type: "Movies", id }],
     }),
   }),
 });

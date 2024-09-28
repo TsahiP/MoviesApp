@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import MovieCard from "./components/MovieCard";
 import {
@@ -10,7 +10,7 @@ import * as React from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
-import { IMovie, MovieResult } from "./types/movie";
+import {  MovieResult } from "./types/movie";
 import FilterModal from "./components/filterModal";
 import { useAppDispatch } from "./app/hooks";
 import { selectSearchInput, setSearchInputValue, selectFilterQuery } from "./features/filterSlice";
@@ -24,7 +24,7 @@ function App() {
 
 
   const [page, setPage] = useState(1);
-  const { data: movies, isError, isLoading } = useGetMoviesQuery(page);
+  const { data: movies} = useGetMoviesQuery(page);
   const { data: searchMovies } = useSearchMoviesQuery(
     searchInputValue + "&page=" + page + filterQuery
   );
@@ -39,7 +39,7 @@ function App() {
   };
 
   const handlePageChange = (
-    event: React.ChangeEvent<unknown>,
+    _event: React.ChangeEvent<unknown>,
     value: number
   ) => {
     setPage(value);
@@ -86,7 +86,7 @@ function App() {
           <ThemeProvider theme={theme}>
             <Stack spacing={2}>
               <Pagination
-                onChange={handlePageChange}
+                onChange={(_e:React.ChangeEvent<unknown>) => handlePageChange}
                 count={
                   searchInputValue === ""
                     ? movies?.total_pages

@@ -87,7 +87,7 @@ export default function FilterModal() {
                   }}
                 >
                   <option value=""></option>
-                  {Array.from(new Array(50), (v, i) => (
+                  {Array.from(new Array(50), (_v, i) => (
                     <option key={i} value={2023 - i}>
                       {2023 - i}
                     </option>
@@ -131,7 +131,7 @@ export default function FilterModal() {
               <Button
                 style={{ textTransform: "none", backgroundColor: "black" }}
                 variant="contained"
-                onClick={(e) => handleFilterClick}
+                onClick={(_e) => handleFilterClick}
                 autoFocus
                 type="submit"
               >
